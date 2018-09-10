@@ -1,0 +1,7 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: demo
+data:
+    greeting.message: Say Hello to the World
+    farewell.message: Say Goodbye
