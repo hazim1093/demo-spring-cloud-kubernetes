@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("demo")
 public class DemoResource {
-    @Value("${greeting.message}")
+
+    // Defaults to empty if property not found
+    @Value("${greeting.message:}")
     private String greetingMessage;
 
     @GetMapping

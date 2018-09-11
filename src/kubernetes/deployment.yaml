@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springcloudkubernetes
+  labels:
+    app: springcloudkubernetes
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: springcloudkubernetes
+  template:
+    metadata:
+      labels:
+        app: springcloudkubernetes
+    spec:
+      containers:
+      - name: springcloudkubernetes
+        image: hazim/demo-springcloudkubernetes
+        ports:
+        - containerPort: 8080

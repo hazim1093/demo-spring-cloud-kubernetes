@@ -1,7 +1,7 @@
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: demo
+  name: springcloudkubernetes
 data:
     greeting.message: Say Hello to the World
     farewell.message: Say Goodbye
