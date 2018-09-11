@@ -1,0 +1,35 @@
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    app: springcloudkubernetes
+  name: springcloudkubernetes
+---
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: Role
+metadata:
+  name: springcloudkubernetes-role
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - services
+  - pods
+  - configmaps
+  verbs:
+  - list
+  - get
+---
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: RoleBinding
+metadata:
+  name: springcloudkubernetes-role-binding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: springcloudkubernetes-role
+subjects:
+- kind: ServiceAccount
+  name: springcloudkubernetes
+  namespace: cp

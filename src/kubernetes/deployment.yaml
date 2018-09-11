@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: springcloudkubernetes
@@ -14,8 +14,10 @@ spec:
       labels:
         app: springcloudkubernetes
     spec:
+      serviceAccountName: springcloudkubernetes
       containers:
       - name: springcloudkubernetes
         image: hazim/demo-springcloudkubernetes
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
