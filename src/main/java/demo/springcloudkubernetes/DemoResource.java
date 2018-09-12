@@ -1,6 +1,8 @@
 package demo.springcloudkubernetes;
 
-import org.springframework.beans.factory.annotation.Value;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,13 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("demo")
 public class DemoResource {
-
-    // Defaults to empty if property not found
-    @Value("${greeting.message:}")
-    private String greetingMessage;
+    @Autowired
+    private GreetingConfig greetingConfig;
 
     @GetMapping
     public String getGreetingMessage(){
-        return "Greeting Message: " + greetingMessage;
+        return "Greeting Message: " + greetingConfig.getMessage();
     }
 }

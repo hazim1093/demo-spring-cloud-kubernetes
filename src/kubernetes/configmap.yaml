@@ -3,8 +3,6 @@ apiVersion: v1
 metadata:
   name: springcloudkubernetes
 data:
-    greeting.message: Say Hello to the World
-    farewell.message: Say Goodbye
     application.yaml: |-
       greeting:
         message: Hello from yml
