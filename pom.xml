@@ -37,12 +37,14 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-actuator</artifactId>
-		</dependency>
+		</dependency>'
+
+		<!-- Apparently kubernetes config plugin did not work without this -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-actuator-autoconfigure</artifactId>
 		</dependency>
-		<!-- For configmap integration -->
+		<!-- For configmap integration, spring-cloud-kubernetes did not work-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-kubernetes-config</artifactId>
